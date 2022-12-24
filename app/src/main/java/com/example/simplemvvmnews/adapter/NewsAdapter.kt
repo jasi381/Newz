@@ -1,9 +1,11 @@
 package com.example.simplemvvmnews.adapter
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
@@ -33,6 +35,12 @@ class NewsAdapter(private var mContext :Context, private val list :List<Article>
         val item = list[position]
         holder.binding.tvTitle.text = item.title
         Glide.with(mContext).load(item.urlToImage).into(holder.binding.newsImg)
+
+        holder.itemView.setOnClickListener {
+            val builder = CustomTabsIntent.Builder()
+            val customTabsIntent = builder.build()
+            customTabsIntent.launchUrl(mContext, Uri.parse(item.url))
+        }
 
     }
 }
