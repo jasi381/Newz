@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportActionBar?.title = Html.fromHtml("<font color='#ffffff'>Newz</font>")
+        supportActionBar?.title = Html.fromHtml("<font color='#ffffff'>Newzz</font>")
         setContentView(binding.root)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView)

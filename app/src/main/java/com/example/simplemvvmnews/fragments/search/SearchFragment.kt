@@ -130,7 +130,7 @@ class SearchFragment : Fragment() {
             "Science",
             "Space"
         )
-        val adapter : ArrayAdapter<String> = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,list)
+        val adapter : ArrayAdapter<String> = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1, list)
         binding.CategoryList.adapter = adapter
     }
 
