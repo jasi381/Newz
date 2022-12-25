@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.simplemvvmnews.fragments.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.simplemvvmnews.fragments.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchingFragment2"
+            app:destination="@id/searchingFragment" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.example.simplemvvmnews.fragments.SavedFragment"
+        android:label="fragment_saved"
+        tools:layout="@layout/fragment_saved" />
+    <fragment
+        android:id="@+id/searchingFragment"
+        android:name="com.example.simplemvvmnews.fragments.search.SearchingFragment"
+        android:label="fragment_search_list"
+        tools:layout="@layout/fragment_search_list" >
+        <action
+            android:id="@+id/action_searchingFragment2_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

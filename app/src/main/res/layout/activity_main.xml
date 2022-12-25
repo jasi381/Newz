@@ -8,15 +8,36 @@
     tools:context=".activities.MainActivity">
 
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:layout="@layout/fragment_home"
-        android:id="@+id/fragment"
-        android:name="com.example.simplemvvmnews.fragments.HomeFragment"
+        app:navGraph= "@navigation/bottom_nav"
+        android:layout_marginTop="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_home" />
+
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:backgroundColor="@color/status"
+        app:iconMargin="8dp"
+        app:iconSize="24dp"
+        app:iconTint="@color/white"
+        app:iconTintActive="#4361ee"
+        app:indicatorColor="#ffb703"
+        app:indicatorRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/bottom_nav_menu"
+        app:textColor="@color/black"
+        app:textSize="16sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

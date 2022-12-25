@@ -11,10 +11,7 @@ import retrofit2.Response
 
 class NewsViewModel:ViewModel() {
 
-    private val newsLiveDataObject = MutableLiveData<News>()
-
-
-    val newsLiveData get() = newsLiveDataObject
+     val newsLiveData = MutableLiveData<News>()
 
     fun getNews(category:String) {
         val response = RetrofitServices.retrofitInstance.getHeadlines(category)
