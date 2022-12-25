@@ -18,9 +18,6 @@
         <action
             android:id="@+id/action_searchFragment_to_searchingFragment2"
             app:destination="@id/searchingFragment" />
-        <argument
-            android:name="category"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/savedFragment"

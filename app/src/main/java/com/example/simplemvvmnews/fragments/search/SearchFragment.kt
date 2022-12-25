@@ -1,5 +1,6 @@
 package com.example.simplemvvmnews.fragments.search
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +9,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.example.simplemvvmnews.R
 import com.example.simplemvvmnews.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
@@ -42,10 +40,14 @@ class SearchFragment : Fragment() {
         else{
            hideKeybord()
             binding.searchEditText.error = null
-            findNavController().navigate(R.id.action_searchFragment_to_searchingFragment2)
+            category = binding.searchEditText.text.toString()
+
+            val action = SearchFragmentDirections.actionSearchFragmentToSearchingFragment2(category)
+            findNavController().navigate(action)
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setCategory(position: Int) {
         when(position){
             0 -> {
