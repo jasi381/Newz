@@ -49,6 +49,7 @@
             android:layout_weight=".5"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
+            android:minHeight="48dp"
             android:padding="10dp"
             android:text="Go"
             android:textAlignment="center"
