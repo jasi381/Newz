@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.simplemvvmnews.R
 import com.example.simplemvvmnews.adapter.NewsAdapter
 import com.example.simplemvvmnews.databinding.FragmentSearchListBinding
+import com.example.simplemvvmnews.fragments.categories.currentDate
 import com.example.simplemvvmnews.viewModel.NewsViewModel
 
 class SearchingFragment : Fragment() {
@@ -31,7 +32,7 @@ class SearchingFragment : Fragment() {
 
         category = item.category
 
-        viewModel.getNews(category)
+        viewModel.getNews(category,currentDate)
 
         viewModel.newsLiveData.observe(viewLifecycleOwner) {
             mAdapter = NewsAdapter(requireContext(), it.articles)

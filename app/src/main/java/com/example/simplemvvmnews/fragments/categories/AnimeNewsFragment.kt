@@ -25,7 +25,7 @@ class AnimeNewsFragment:Fragment() {
         binding = FragmentAnimeNewsBinding.inflate(layoutInflater)
         val viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
-        viewModel.getNews("anime")
+        viewModel.getNews("anime",currentDate)
 
         viewModel.newsLiveData.observe(viewLifecycleOwner) {
             mAdapter = NewsAdapter(requireContext(), it.articles)

@@ -26,7 +26,7 @@ class TopHeadlinesFragment:Fragment() {
 
         val viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
-        viewModel.getNews("top-headlines")
+        viewModel.getNews("top-headlines",currentDate)
 
         viewModel.newsLiveData.observe(viewLifecycleOwner) {
             mAdapter = NewsAdapter(requireContext(), it.articles)

@@ -26,7 +26,7 @@ class BitcoinNewsFragment:Fragment() {
 
         val viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
-        viewModel.getNews("bitcoin")
+        viewModel.getNews("bitcoin",currentDate)
 
         viewModel.newsLiveData.observe(viewLifecycleOwner) {
             mAdapter = NewsAdapter(requireContext(), it.articles)

@@ -25,7 +25,7 @@ class HollyWoodNewsFragment:Fragment() {
 
         val viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
-        viewModel.getNews("hollywood")
+        viewModel.getNews("hollywood",currentDate)
 
         viewModel.newsLiveData.observe(viewLifecycleOwner) {
             mAdapter = NewsAdapter(requireContext(), it.articles)

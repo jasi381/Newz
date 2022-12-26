@@ -51,7 +51,7 @@ class SearchFragment : Fragment() {
     private fun setCategory(position: Int) {
         when(position){
             0 -> {
-                binding.searchEditText.setText("Top Headlines")
+                binding.searchEditText.setText("Top-Headlines")
             }
             1 -> {
                 binding.searchEditText.setText("Android")
@@ -112,7 +112,7 @@ class SearchFragment : Fragment() {
 
     private fun setUpList() {
         val list = arrayOf(
-            "Top Headline",
+            "Top-Headlines",
             "Android",
             "Animals",
             "Anime",

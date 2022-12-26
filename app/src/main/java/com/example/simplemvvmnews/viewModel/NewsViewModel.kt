@@ -13,8 +13,8 @@ class NewsViewModel:ViewModel() {
 
      val newsLiveData = MutableLiveData<News>()
 
-    fun getNews(category:String) {
-        val response = RetrofitServices.retrofitInstance.getHeadlines(category)
+    fun getNews(category:String,from:String){
+        val response = RetrofitServices.retrofitInstance.getHeadlines(category,from)
         response.enqueue(object : Callback<News?> {
             override fun onResponse(call: Call<News?>, response: Response<News?>) {
                 //show loading

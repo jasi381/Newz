@@ -11,10 +11,15 @@ import com.example.simplemvvmnews.adapter.NewsAdapter
 import com.example.simplemvvmnews.databinding.FragmentAndroidNewsBinding
 import com.example.simplemvvmnews.viewModel.NewsViewModel
 
+//declare a global variable
+
+val currentDate = java.time.LocalDate.now().minusDays(5).toString()
 
 class AndroidNewsFragment:Fragment() {
     private lateinit var binding: FragmentAndroidNewsBinding
     private lateinit var mAdapter: NewsAdapter
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +30,7 @@ class AndroidNewsFragment:Fragment() {
 
         val viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
-        viewModel.getNews("android")
+        viewModel.getNews("android",currentDate)
 
         viewModel.newsLiveData.observe(viewLifecycleOwner) {
             mAdapter = NewsAdapter(requireContext(), it.articles)
